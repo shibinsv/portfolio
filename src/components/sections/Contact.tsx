@@ -2,7 +2,9 @@ import React, { useState, useRef } from "react";
 import { motion } from "framer-motion";
 import { Mail, Phone, MapPin, Send, CheckCircle2, Github, Linkedin, BookOpen, AlertCircle } from "lucide-react";
 
-const FORMSPREE_URL = import.meta.env.VITE_FORMSPREE_URL as string;
+const FORMSPREE_URL =
+  (import.meta.env.VITE_FORMSPREE_URL as string | undefined) ||
+  "https://formspree.io/f/xykqwvzz";
 
 export function Contact() {
   const formRef = useRef<HTMLFormElement>(null);
